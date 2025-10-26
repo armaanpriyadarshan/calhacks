@@ -24,6 +24,7 @@ const statusColors: Record<User["status"], string> = {
 export function TopBar({ title, user }: TopBarProps) {
   const person = useMemo<User>(
     () =>
+      // TODO: Replace fallback user with data from NextAuth/Supabase session.
       user ?? {
         name: "Taylor Brooks",
         avatarUrl: "/vercel.svg",

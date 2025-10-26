@@ -113,6 +113,7 @@ export function JournalEditor({
             insights. When you are ready, run an analysis to surface themes,
             prompts, and suggestions for communities that align with your needs.
           </p>
+          {/* TODO: Connect to LangChain/MCP analysis endpoint. */}
           <Button className="w-fit" variant="outline">
             Draft an analysis
           </Button>
@@ -121,4 +122,3 @@ export function JournalEditor({
     </section>
   );
 }
-

@@ -17,7 +17,7 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="flex h-full w-64 flex-col border-r border-zinc-200 bg-white/60 px-4 py-6 backdrop-blur-md dark:border-zinc-800 dark:bg-black/40">
+    <aside className="flex h-full w-64 shrink-0 flex-col border-r border-zinc-200 bg-white/60 px-4 py-6 backdrop-blur-md dark:border-zinc-800 dark:bg-black/40">
       <div className="mb-8">
         <Link href="/" className="block">
           <div className="text-sm uppercase tracking-wide text-zinc-400">
@@ -71,4 +71,3 @@ export function Sidebar() {
     </aside>
   );
 }
-

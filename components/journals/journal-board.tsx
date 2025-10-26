@@ -14,6 +14,7 @@ export type JournalEntry = {
   content: string;
 };
 
+// TODO: Replace mock entries with data fetched from Supabase journals.
 const sampleEntries: JournalEntry[] = [
   {
     id: "1",
@@ -85,6 +86,7 @@ export function JournalBoard() {
 
   const handleContentChange = (value: string) => {
     if (!activeEntry) return;
+    // TODO: Persist edits through a journal update server action.
     setDrafts((prev) => ({
       ...prev,
       [activeEntry.id]: value,
@@ -108,4 +110,3 @@ export function JournalBoard() {
     </div>
   );
 }
-

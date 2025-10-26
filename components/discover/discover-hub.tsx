@@ -22,6 +22,7 @@ type Message = {
   timestamp: string;
 };
 
+// TODO: Replace mock suggestions with Supabase vector search results.
 const suggestions: Suggestion[] = [
   {
     id: "s1",
@@ -61,6 +62,7 @@ const suggestions: Suggestion[] = [
   },
 ];
 
+// TODO: Stream Supabase Realtime chat instead of static sample messages.
 const sampleMessages: Message[] = [
   {
     id: "m1",
@@ -154,7 +156,7 @@ export function DiscoverHub() {
                 className={cn(
                   "cursor-pointer rounded-xl border border-transparent bg-white/70 p-4 transition hover:border-zinc-200 hover:bg-white dark:bg-zinc-950/60 dark:hover:border-zinc-800 dark:hover:bg-zinc-900/80",
                   resolvedPreviewId === item.id &&
-                    "border-zinc-900 bg-zinc-900 text-zinc-50 shadow-sm dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900",
+                    "border-zinc-900 bg-zinc-50 text-zinc-900 shadow-sm dark:border-zinc-100 dark:bg-zinc-900 dark:text-zinc-100",
                 )}
                 onClick={() => setPreviewId(item.id)}
               >
@@ -175,7 +177,7 @@ export function DiscoverHub() {
                       className={cn(
                         "rounded-full border border-dashed border-current px-2 py-0.5",
                         resolvedPreviewId === item.id
-                          ? "text-zinc-200 dark:text-zinc-700"
+                          ? "text-zinc-600 dark:text-zinc-300"
                           : "text-zinc-400 dark:text-zinc-500",
                       )}
                     >
@@ -183,7 +185,13 @@ export function DiscoverHub() {
                     </span>
                   ))}
                 </div>
-                <div className="mt-4 flex items-center justify-between text-xs text-zinc-400">
+                <div
+                  className={cn(
+                    "mt-4 flex items-center justify-between text-xs text-zinc-400",
+                    resolvedPreviewId === item.id &&
+                      "text-zinc-500 dark:text-zinc-300",
+                  )}
+                >
                   <div className="flex items-center gap-2">
                     <span
                       className={cn(
@@ -216,6 +224,7 @@ export function DiscoverHub() {
               </h2>
             </div>
             <div className="flex items-center gap-2">
+              {/* TODO: Call matchmaking API to create or join rooms. */}
               <Button variant="ghost" size="sm">
                 Queue for later
               </Button>
@@ -223,6 +232,7 @@ export function DiscoverHub() {
             </div>
           </div>
           <div className="rounded-xl border border-dashed border-zinc-200 p-4 text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
+            {/* TODO: Populate with LangChain summary from AI analysis service. */}
             AI digest of shared themes will appear here. You will receive a
             summary of alignment factors, journaling patterns, and suggested
             prompts to explore together.
@@ -231,6 +241,7 @@ export function DiscoverHub() {
         <div className="flex flex-1 flex-col overflow-hidden">
           <div className="flex-1 overflow-y-auto px-8 py-6">
             <div className="space-y-4">
+              {/* TODO: Render realtime message feed sourced from Supabase channels. */}
               {sampleMessages.map((message) => (
                 <div
                   key={message.id}
@@ -270,6 +281,7 @@ export function DiscoverHub() {
               <Button variant="ghost" size="sm">
                 Add journaling prompt
               </Button>
+              {/* TODO: Submit message to chat route handler with streaming response. */}
               <Button size="sm">Send invitation</Button>
             </div>
           </footer>

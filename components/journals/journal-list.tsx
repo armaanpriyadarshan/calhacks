@@ -42,17 +42,18 @@ export function JournalList({
 
   return (
     <section className="flex w-80 flex-col border-r border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-black/40">
-      <div className="flex flex-col gap-3 border-b border-zinc-200 p-4 dark:border-zinc-800">
-        <div className="text-xs font-medium uppercase tracking-wide text-zinc-400">
-          Your journals
-        </div>
-        <div className="flex gap-2">
-          <Button className="flex-1">New entry</Button>
-          <Button variant="ghost" className="px-3">
-            Import
-          </Button>
-        </div>
-        <label className="relative">
+        <div className="flex flex-col gap-3 border-b border-zinc-200 p-4 dark:border-zinc-800">
+          <div className="text-xs font-medium uppercase tracking-wide text-zinc-400">
+            Your journals
+          </div>
+          <div className="flex gap-2">
+            {/* TODO: Hook this up to a server action to create a journal entry. */}
+            <Button className="flex-1">New entry</Button>
+            <Button variant="ghost" className="px-3">
+              Import
+            </Button>
+          </div>
+          <label className="relative">
           <input
             value={search}
             onChange={(event) => onSearchChange(event.target.value)}
@@ -131,4 +132,3 @@ export function JournalList({
     </section>
   );
 }
-
