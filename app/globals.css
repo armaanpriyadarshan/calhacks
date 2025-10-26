@@ -31,3 +31,76 @@ body {
   background-color: rgba(24, 24, 27, 0.12);
   color: inherit;
 }
+
+.journal-editor:empty:before {
+  content: attr(data-placeholder);
+  color: rgba(113, 113, 122, 0.8);
+}
+
+.journal-editor p {
+  margin: 0 0 0.75rem;
+}
+
+.journal-editor strong {
+  font-weight: 600;
+}
+
+.journal-editor em {
+  font-style: italic;
+}
+
+.journal-editor .journal-assist {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.journal-editor mark {
+  background-color: #fef08a;
+  padding: 0 0.1em;
+}
+
+.journal-checklist-text {
+  flex: 1;
+  outline: none;
+}
+
+.journal-checklist-text:empty:before {
+  content: "New task";
+  color: rgba(113, 113, 122, 0.6);
+}
+
+.journal-checklist-text:focus {
+  outline: none;
+}
+
+.journal-checklist-text:focus-visible {
+  outline: none;
+}
+
+.journal-checklist-text::selection {
+  background-color: rgba(113, 113, 122, 0.25);
+}
+
+.journal-checklist {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.journal-checkbox {
+  height: 1rem;
+  width: 1rem;
+  accent-color: #18181b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .journal-editor mark {
+    background-color: rgba(253, 224, 71, 0.35);
+    color: inherit;
+  }
+
+  .journal-checkbox {
+    accent-color: #e4e4e7;
+  }
+}

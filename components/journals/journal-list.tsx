@@ -89,7 +89,7 @@ export function JournalList({
                   className={cn(
                     "w-full rounded-lg border border-transparent px-3 py-3 text-left transition",
                     isActive
-                      ? "border-zinc-900 bg-zinc-900 text-zinc-50 dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900"
+                      ? "border-zinc-300 bg-zinc-200 text-zinc-900 shadow-sm dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
                       : "hover:border-zinc-200 hover:bg-white dark:hover:border-zinc-800 dark:hover:bg-zinc-900",
                   )}
                 >
@@ -98,7 +98,8 @@ export function JournalList({
                       className={cn(
                         "rounded-full px-2 py-0.5 font-medium",
                         mood.tone,
-                        isActive && "bg-white/20 text-white dark:text-zinc-900",
+                        isActive &&
+                          "bg-white/70 text-zinc-900 dark:bg-zinc-900/60 dark:text-zinc-100",
                       )}
                     >
                       {mood.label}
@@ -106,7 +107,7 @@ export function JournalList({
                     <span
                       className={cn(
                         "text-zinc-400",
-                        isActive && "text-zinc-200 dark:text-zinc-600",
+                        isActive && "text-zinc-600 dark:text-zinc-400",
                       )}
                     >
                       {entry.updatedAt}
@@ -118,7 +119,7 @@ export function JournalList({
                   <p
                     className={cn(
                       "mt-1 text-xs text-zinc-500",
-                      isActive && "text-zinc-200 dark:text-zinc-600",
+                      isActive && "text-zinc-600 dark:text-zinc-400",
                     )}
                   >
                     {entry.summary}
