@@ -22,5 +22,12 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-variant-ligatures: contextual;
+}
+
+::selection {
+  background-color: rgba(24, 24, 27, 0.12);
+  color: inherit;
 }
